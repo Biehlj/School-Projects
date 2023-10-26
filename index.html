@@ -11,11 +11,10 @@
     <main>
         <h1>Name Formatter</h1>
         <h2>Your name in six different formats:</h2>
-    </main> 
-    <script>
+        <script>
         getName();
-    </script>
-    <h1>Calorie Counter</h1>
+        </script>
+        <h1>Calorie Counter</h1>
         <div>
             <label for="proteinGrams">Protein (g):</label>
             <input type="text" id="proteinGrams" value="0">
@@ -32,7 +31,59 @@
         <div>
             <label for="totalCalories">Total Calories:</label>
             <input type="text" id="totalCalories" disabled>
-        </div>  
-    <script src="./src/calorie.js"></script>
+        </div>
+        <script src="./src/calorie.js"></script>
+        <h1>Calculator</h1>
+        <div>
+            <label for="num1">First Number:</label>
+            <input type="text" id="num1" value="1">
+        </div>
+        <div>
+            <label for="num2">Second Number:</label>
+            <input type="text" id="num2" value="2">
+        </div>
+        <div>
+            <label></label>
+            <input type="button" id="add" value="+">
+            <input type="button" id="sub" value="-">
+            <input type="button" id="mul" value="x">
+            <input type="button" id="div" value="/">
+        </div>
+        <div>
+            <label for="answer">Answer:</label>
+            <input type="text" id="answer" disabled>
+        </div>
+         <script src="calc.js"></script>
+        <h1>Car Loan</h1>
+        <script src="carloan.js"></script>
+        <div id="aside">
+        <img src="SWIC.jpg" width="200" height="200"></img>
+        </div>
+        <h1>Tuition</h1>
+        <script src="tuition.js"></script>
+        <h1>Joey's Answer</h1>
+        <div>
+            <label for="speed">Speed (mph):</label>
+            <input type="text" id="speed" value="60">
+        </div>
+        <div>
+            <label for="time">Time (hrs):</label>
+            <input type="text" id="time" value="4">
+        </div>
+        <div>
+            <label></label>
+            <input type="button" id="enter" value="Enter">
+            <input type="button" id="clear" value="Clear">
+        </div>
+        <div>
+            <label for="distance">Distance (miles):</label>
+            <input type="text" id="distance" disabled>
+        </div>
+        <script src="joey.js"></script>
+        <div>
+        <h1>Multiplication Table</h1>
+        <script src="multiplication.js"></script>
+        </div>
+    </main> 
 </body>
 </html>
