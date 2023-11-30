@@ -4,7 +4,6 @@
 "use strict"
 
 // removes the duplication of document.querySelector repetition
-const $ = selector => document.querySelector(selector);
 const getErrorMsg = lbl => `${lbl} entry must be a valid number`;
 const focusAndSelect = selector => {
     const elem = $(selector);
@@ -15,46 +14,46 @@ const validate = (slices, fries, drinks) => {
     return !isNaN(slices) && !isNaN(fries) && !isNaN(drinks);
 };
 function setDefaults(){
-    $("#slices").value = 3;
-    $("#fries").value = 1;
-    $("#drinks").value = 2;
+    $("#slices").val(3);
+    $("#fries").val(3);
+    $("#drinks").val(2);
 };
 function clearResults() {
-    $("#pq").innerHTML = "-";
-    $("#fq").innerHTML = "-";
-    $("#dq").innerHTML = "-";
+    $("#pq").html("-");
+    $("#fq").html("-");
+    $("#dq").html("-");
 
-    $("#pp").innerHTML = "-";
-    $("#fp").innerHTML = "-";
-    $("#dp").innerHTML = "-";
-    $("#total").innerHTML = "-";
+    $("#pp").html("-");
+    $("#fp").html("-");
+    $("#dp").html("-");
+    $("#total").html("-");
 };
 
-$("#slices").addEventListener("input", clearResults);
-$("#fries").addEventListener("input", clearResults);
-$("#drinks").addEventListener("input", clearResults);
+$("#slices").on("input", clearResults());
+$("#fries").on("input",clearResults());
+$("#drinks").on("input",clearResults());
 
-$("#compute").addEventListener("click", () => {
-    const s = parseFloat($("#slices").value);
-    const f = parseFloat($("#fries").value);
-    const d = parseFloat($("#drinks").value);
+$("#compute").click(() => {
+    const s = parseFloat($("#slices").val());
+    const f = parseFloat($("#fries").val());
+    const d = parseFloat($("#drinks").val());
 
     if (validate(s, f, d)) {
-        $("#pq").innerHTML = s;
-        $("#fq").innerHTML = f;
-        $("#dq").innerHTML = d;
+        $("#pq").html(s);
+        $("#fq").html(f);
+        $("#dq").html(d);
 
-        $("#pp").innerHTML = "$" + (s * 1.75).toFixed(2);
-        $("#fp").innerHTML = "$" + (f * 2).toFixed(2);
-        $("#dp").innerHTML = "$" + (d * 1.25).toFixed(2);
+        $("#pp").html("$" + (s * 1.75).toFixed(2));
+        $("#fp").html("$" + (f * 2).toFixed(2));
+        $("#dp").html("$" + (d * 1.25).toFixed(2));
 
         const total = (s * 1.75) + (f * 2) + (d * 1.25);
-        $("#total").innerHTML = "$" + total.toFixed(2);
+        $("#total").html("$" + total.toFixed(2));
     }
     focusAndSelect("#slices");
 });
 
-$("#clear").addEventListener("click", () => {
+$("#clear").click(() => {
     // setDefaults();
     // clearResults();
     // focusAndSelect("#slices");
